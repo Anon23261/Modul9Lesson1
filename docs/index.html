@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bakery Registration System</title>
+    <title>Sweet Success - Bakery Registration System</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bakery-theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .hero h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 4rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
 </head>
 <body>
     <header class="hero">
         <div class="hero-content">
-            <h1>🥖 Bakery Registration System</h1>
-            <p>A modern solution for managing bakery products with advanced video support</p>
+            <h1>Sweet Success</h1>
+            <p>A delightful way to manage your bakery's delicious creations</p>
             <div class="cta-buttons">
-                <a href="#features" class="btn btn-primary">View Features</a>
+                <a href="#features" class="btn btn-primary">Explore Features</a>
                 <a href="demo.html" class="btn btn-secondary">Try Demo</a>
             </div>
         </div>
@@ -21,57 +29,86 @@
 
     <main>
         <section id="features" class="features">
-            <h2>Key Features</h2>
+            <h2>Our Special Ingredients</h2>
             <div class="feature-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">📝</div>
-                    <h3>Easy Registration</h3>
-                    <p>Simple and intuitive product registration process</p>
+                    <div class="feature-icon">🥖</div>
+                    <h3>Easy Recipe Management</h3>
+                    <p>Organize your recipes with ease</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🎥</div>
-                    <h3>Video Support</h3>
-                    <p>High-quality video processing and playback</p>
+                    <div class="feature-icon">📸</div>
+                    <h3>Beautiful Galleries</h3>
+                    <p>Showcase your creations</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📱</div>
-                    <h3>Responsive Design</h3>
-                    <p>Works perfectly on all devices</p>
+                    <h3>Mobile-Ready</h3>
+                    <p>Manage on any device</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Secure Storage</h3>
-                    <p>Safe and encrypted data storage</p>
+                    <div class="feature-icon">🎥</div>
+                    <h3>Video Tutorials</h3>
+                    <p>Share your baking techniques</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-section">
+            <h2>Master the Art of Baking</h2>
+            <div class="video-container">
+                <iframe width="100%" height="450" src="https://www.youtube.com/embed/watch?v=FFmHQj0_LGc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2>Fresh from the Oven</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/images/bread-1.jpg" alt="Freshly baked artisan bread">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/pastry-1.jpg" alt="Delicate French pastries">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/cake-1.jpg" alt="Elegant wedding cake">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/cookie-1.jpg" alt="Homemade cookies">
+                </div>
+            </div>
+        </section>
+
+        <section id="recipes" class="features">
+            <h2>Featured Recipes</h2>
+            <div class="feature-grid">
+                <div class="recipe-card">
+                    <img src="assets/images/sourdough.jpg" alt="Sourdough Bread">
+                    <h3>Artisan Sourdough</h3>
+                    <p>Master the art of sourdough baking</p>
+                </div>
+                <div class="recipe-card">
+                    <img src="assets/images/croissant.jpg" alt="Croissants">
+                    <h3>Perfect Croissants</h3>
+                    <p>Flaky, buttery goodness</p>
+                </div>
+                <div class="recipe-card">
+                    <img src="assets/images/macarons.jpg" alt="Macarons">
+                    <h3>French Macarons</h3>
+                    <p>Delicate almond cookies</p>
+                </div>
+                <div class="recipe-card">
+                    <img src="assets/images/chocolate-cake.jpg" alt="Chocolate Cake">
+                    <h3>Devil's Food Cake</h3>
+                    <p>Rich chocolate indulgence</p>
                 </div>
             </div>
         </section>
 
         <section id="demo" class="demo">
-            <h2>Live Demo</h2>
+            <h2>Try Our Demo</h2>
             <div class="demo-container">
                 <iframe src="demo.html" frameborder="0"></iframe>
-            </div>
-        </section>
-
-        <section id="documentation" class="documentation">
-            <h2>Documentation</h2>
-            <div class="doc-grid">
-                <a href="docs/installation.html" class="doc-card">
-                    <h3>📥 Installation Guide</h3>
-                    <p>Step-by-step setup instructions</p>
-                </a>
-                <a href="docs/video-guidelines.html" class="doc-card">
-                    <h3>🎬 Video Guidelines</h3>
-                    <p>Video upload specifications</p>
-                </a>
-                <a href="docs/api.html" class="doc-card">
-                    <h3>🔌 API Reference</h3>
-                    <p>Complete API documentation</p>
-                </a>
-                <a href="docs/examples.html" class="doc-card">
-                    <h3>📚 Examples</h3>
-                    <p>Code examples and tutorials</p>
-                </a>
             </div>
         </section>
     </main>
@@ -82,9 +119,8 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="#features">Features</a></li>
+                    <li><a href="#recipes">Recipes</a></li>
                     <li><a href="#demo">Demo</a></li>
-                    <li><a href="#documentation">Documentation</a></li>
-                    <li><a href="https://github.com/Anon23261/Modul9Lesson1">GitHub</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -92,20 +128,20 @@
                 <ul>
                     <li><a href="docs/installation.html">Installation</a></li>
                     <li><a href="docs/api.html">API Reference</a></li>
-                    <li><a href="docs/examples.html">Examples</a></li>
                     <li><a href="docs/video-guidelines.html">Video Guidelines</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Contact</h3>
+                <h3>Connect</h3>
                 <ul>
-                    <li><a href="https://github.com/Anon23261/Modul9Lesson1/issues">Report Issues</a></li>
-                    <li><a href="https://github.com/Anon23261/Modul9Lesson1/discussions">Discussions</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Pinterest</a></li>
+                    <li><a href="#">YouTube</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Bakery Registration System. All rights reserved.</p>
+            <p>&copy; 2024 Sweet Success Bakery System. All rights reserved.</p>
         </div>
     </footer>
 
