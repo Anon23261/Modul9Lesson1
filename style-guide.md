@@ -1,145 +1,142 @@
-# 🎨 Bakery Registration Design System
+# Bakery Website Style Guide
 
-## Typography Scale
-
-### Headers
-- H1: Poppins Bold, 48px/56px
-- H2: Poppins SemiBold, 36px/44px
-- H3: Poppins SemiBold, 24px/32px
-- H4: Poppins Medium, 20px/28px
-- H5: Poppins Medium, 16px/24px
-
-### Body Text
-- Large: Inter Regular, 18px/28px
-- Regular: Inter Regular, 16px/24px
-- Small: Inter Regular, 14px/20px
-- Caption: Inter Regular, 12px/16px
-
-### Button Text
-- Primary: Poppins Medium, 16px/24px
-- Secondary: Poppins Medium, 14px/20px
-
-## Color System
+## Colors
 
 ### Primary Colors
-- Primary-900: #2D3436 (Text)
-- Primary-800: #355C7D (Deep Blue)
-- Primary-700: #F67280 (Coral Pink)
-- Primary-600: #F8B195 (Warm Peach)
-
-### Secondary Colors
-- Secondary-500: #55efc4 (Mint/Success)
-- Secondary-400: #ff7675 (Soft Red/Error)
-- Secondary-300: #FFEAA7 (Pale Yellow/Warning)
-- Secondary-200: #81ECEC (Sky Blue/Info)
+- Chocolate Brown (`--bakery-chocolate`): `#3E2723` - Used for headers and primary text
+- Butter Yellow (`--bakery-butter`): `#FFE4B5` - Used for accents and highlights
+- Flour White (`--bakery-flour`): `#FFF5EE` - Used for backgrounds and light text
+- Gold (`--bakery-gold`): `#D4AF37` - Used for special highlights and hover states
 
 ### Neutral Colors
-- Neutral-900: #2D3436 (Dark Gray)
-- Neutral-800: #636E72 (Gray)
-- Neutral-700: #B2BEC3 (Light Gray)
-- Neutral-600: #DFE6E9 (Lighter Gray)
-- Neutral-500: #F5F6FA (Background Gray)
-- Neutral-100: #FFFFFF (White)
+- Dark Gray (`--neutral-800`): `#333333` - Used for body text
+- Light Gray (`--neutral-200`): `#EEEEEE` - Used for borders and dividers
 
-## Spacing System
-Base unit: 8px
+## Typography
 
-### Margins
-- xs: 8px
-- sm: 16px
-- md: 24px
-- lg: 32px
-- xl: 40px
-- xxl: 48px
+### Fonts
+- Headings: 'Pacifico', cursive
+- Body: 'Open Sans', sans-serif
+- Accents: 'Roboto Slab', serif
 
-### Padding
-- xs: 8px
-- sm: 16px
-- md: 24px
-- lg: 32px
+### Font Sizes
+- H1: 2.5rem
+- H2: 2rem
+- H3: 1.5rem
+- Body: 1rem
+- Small: 0.875rem
+
+### Font Weights
+- Regular: 400
+- Medium: 500
+- Bold: 700
+
+## Spacing
+
+### Margins and Padding
+- Extra Small: 0.5rem (8px)
+- Small: 1rem (16px)
+- Medium: 1.5rem (24px)
+- Large: 2rem (32px)
+- Extra Large: 3rem (48px)
+
+### Grid
+- Container Max Width: 1200px
+- Grid Columns: 12
+- Grid Gap: 2rem (32px)
 
 ## Components
 
 ### Buttons
-- Height: 48px
-- Border Radius: 8px
-- States: Default, Hover, Active, Disabled
+```css
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
 
-### Input Fields
-- Height: 48px
-- Border Radius: 8px
-- Border: 1px solid Neutral-700
-- States: Default, Focus, Error, Disabled
+.btn-primary {
+    background: var(--bakery-chocolate);
+    color: var(--bakery-flour);
+}
+
+.btn-secondary {
+    background: var(--bakery-butter);
+    color: var(--bakery-chocolate);
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+}
+```
 
 ### Cards
-- Border Radius: 12px
-- Shadow: 0 2px 4px rgba(0,0,0,0.1)
-- Background: Neutral-100
+```css
+.recipe-card {
+    background: var(--bakery-cream);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+```
 
-### Form Groups
-- Vertical Spacing: 24px
-- Label to Input Spacing: 8px
+### Navigation
+```css
+.navbar {
+    background: var(--bakery-chocolate);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-## Grid System
-- Columns: 12
-- Gutter: 24px
-- Margin: 24px
-- Breakpoints:
-  - Mobile: 320px - 767px
-  - Tablet: 768px - 1023px
-  - Desktop: 1024px+
+.nav-links a {
+    color: var(--bakery-flour);
+    text-decoration: none;
+    font-weight: 500;
+}
+```
 
-## Icons
-- Size System:
-  - Small: 16x16px
-  - Medium: 24x24px
-  - Large: 32x32px
-- Style: Rounded
-- Stroke Width: 2px
+## Images
+
+### Recipe Images
+- Dimensions: 800x600px
+- Format: JPG
+- Quality: 80%
+- Max File Size: 200KB
+
+### Hero Images
+- Dimensions: 1920x1080px
+- Format: JPG
+- Quality: 90%
+- Max File Size: 500KB
+
+## Responsive Breakpoints
+
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
 
 ## Animations
-- Duration: 200ms
-- Easing: ease-in-out
-- Hover Transitions: 150ms
-- Page Transitions: 300ms
 
-## Image Guidelines
-- Product Images:
-  - Aspect Ratio: 1:1
-  - Min Size: 800x800px
-  - Format: JPG/PNG
-  - Max File Size: 2MB
-- Thumbnails:
-  - Size: 200x200px
-  - Format: WebP
-  - Quality: 80%
+### Transitions
+- Default: 0.3s ease
+- Hover Effects: 0.2s ease-in-out
+- Page Transitions: 0.4s ease-in-out
 
-## Form Validation
-### Error States
-- Input Border: Secondary-400 (Error Red)
-- Error Text: Secondary-400
-- Icon: Error icon in Secondary-400
-- Background: Neutral-100
+### Hover States
+- Buttons: Scale 1.05
+- Cards: translateY(-5px)
+- Links: Color change to var(--bakery-gold)
 
-### Success States
-- Input Border: Secondary-500 (Success Green)
-- Success Text: Secondary-500
-- Icon: Check icon in Secondary-500
-- Background: Neutral-100
+## Best Practices
 
-## Loading States
-- Skeleton Loading:
-  - Background: Neutral-600
-  - Animation: Pulse
-  - Duration: 1.5s
-- Spinners:
-  - Size: 24px
-  - Color: Primary-800
-  - Duration: 1s
-
-## Accessibility
-- Minimum Text Contrast: 4.5:1
-- Focus States: 2px solid Primary-800
-- Touch Targets: Minimum 44x44px
-- Error Messages: Icon + Text
-- Required Fields: Asterisk (*)
+1. Maintain consistent spacing using the defined spacing scale
+2. Use semantic HTML elements
+3. Ensure color contrast meets WCAG 2.1 guidelines
+4. Optimize images for web performance
+5. Test responsive layouts across all breakpoints
+6. Keep animations subtle and purposeful
+7. Use CSS variables for maintainable theming
