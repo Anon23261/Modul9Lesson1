@@ -1,99 +1,168 @@
-# 📐 Figma File Structure
+# Bakery Website Figma Structure
 
-## Pages Organization
+## Pages
+1. **Main Page**
+   - Hero Section
+   - Featured Recipes
+   - About Us
+   - Blog Preview
+   - Newsletter Signup
+   - Footer
 
-### 1️⃣ 🎨 Style Guide
-- Color Styles
-- Typography Styles
-- Effect Styles
-- Grid Styles
-- Component Styles
+2. **Recipe Details**
+   - Recipe Header
+   - Ingredients List
+   - Instructions
+   - Tips & Notes
+   - Related Recipes
 
-### 2️⃣ 🧱 Components
-- Buttons
-  - Primary
-  - Secondary
-  - Text
-  - Icon
+3. **Blog**
+   - Blog Header
+   - Article Cards
+   - Sidebar
+   - Categories
+   - Search
+
+## Components
+
+### Design System
+- Colors
+- Typography
+- Spacing
+- Grid System
+- Shadows
+- Border Radius
+
+### Navigation
+- Logo
+- Menu Items
+- Mobile Menu
+- Search Bar
+- User Profile
+
+### Cards
+- Recipe Card
+- Blog Post Card
+- Feature Card
+- Testimonial Card
+
+### Buttons
+- Primary Button
+- Secondary Button
+- Text Button
+- Icon Button
+- Link Button
+
+### Forms
 - Input Fields
-  - Text Input
-  - Select
-  - Checkbox
-  - Radio
-  - File Upload
-- Forms
-  - Form Groups
-  - Validation States
-- Navigation
-  - Progress Bar
-  - Breadcrumbs
-- Feedback
-  - Success Message
-  - Error Message
-  - Loading States
+- Text Areas
+- Checkboxes
+- Radio Buttons
+- Dropdowns
+- Form Labels
+- Validation States
 
-### 3️⃣ ✏️ Wireframes
-- Mobile (320px)
-  - Step 1: Basic Info
-  - Step 2: Product Details
-  - Step 3: Images & Pricing
-  - Step 4: Review & Submit
-- Tablet (768px)
-  - Step 1: Basic Info
-  - Step 2: Product Details
-  - Step 3: Images & Pricing
-  - Step 4: Review & Submit
-- Desktop (1024px)
-  - Step 1: Basic Info
-  - Step 2: Product Details
-  - Step 3: Images & Pricing
-  - Step 4: Review & Submit
+### Media
+- Image Frames
+- Video Player
+- Gallery Grid
+- Image Carousel
 
-### 4️⃣ 🎯 High-Fidelity Designs
-- Mobile Screens
-  - All States
-  - Interactions
-- Tablet Screens
-  - All States
-  - Interactions
-- Desktop Screens
-  - All States
-  - Interactions
+### Feedback
+- Success Message
+- Error Message
+- Loading States
+- Empty States
+- Tooltips
 
-### 5️⃣ 🔄 Prototype
-- User Flow
-- Interactions
-- Animations
-- Transitions
+## Layout Grids
 
-### 6️⃣ 📊 Research
-- User Pain Points
-- Best Practices
-- Competitive Analysis
-- User Flow Diagram
+### Desktop (1200px)
+- 12 columns
+- 32px gutter
+- 24px margin
 
-## Frame Naming Convention
-- 📱 [Mobile] Screen Name - State
-- 📱 [Tablet] Screen Name - State
-- 🖥️ [Desktop] Screen Name - State
+### Tablet (768px)
+- 8 columns
+- 24px gutter
+- 16px margin
 
-## Component Naming Convention
-- Category/Component Name/Variant/State
-Example: Button/Primary/Large/Hover
+### Mobile (375px)
+- 4 columns
+- 16px gutter
+- 16px margin
 
-## Color Style Naming
-- Primary/Shade Number
-- Secondary/Shade Number
-- Neutral/Shade Number
+## Auto-Layout
 
-## Text Style Naming
-- H1/Bold/Size
-- Body/Regular/Size
-- Button/Medium/Size
+### Vertical Stacks
+- Section Spacing: 80px
+- Component Spacing: 24px
+- Element Spacing: 16px
 
-## Effect Style Naming
-- Shadow/Depth
-- Overlay/Opacity
+### Horizontal Stacks
+- Navigation Items: 32px
+- Card Grid: 24px
+- Form Elements: 16px
 
-## Grid Style Naming
-- Device/Columns/Gutter
+## Constraints
+
+### Responsive Behavior
+- Fixed Elements
+  - Navigation Bar
+  - Footer
+  - Sidebar
+- Fluid Elements
+  - Content Container
+  - Image Grid
+  - Text Blocks
+
+### Breakpoints
+- Desktop: 1200px+
+- Tablet: 768px - 1199px
+- Mobile: < 768px
+
+## Assets
+
+### Icons
+- Navigation Icons
+- Social Media Icons
+- UI Icons
+- Category Icons
+
+### Images
+- Hero Images
+- Recipe Photos
+- Blog Images
+- Author Avatars
+- Background Patterns
+
+## Prototyping
+
+### Interactions
+- Hover States
+- Click/Tap
+- Scroll Animations
+- Page Transitions
+
+### User Flows
+1. Browse Recipes
+2. View Recipe Details
+3. Read Blog Posts
+4. Newsletter Signup
+5. Mobile Navigation
+
+## Documentation
+
+### Style Guide
+- Color Usage
+- Typography Rules
+- Component Guidelines
+- Layout Principles
+
+### Component States
+- Default
+- Hover
+- Active
+- Disabled
+- Loading
+- Error
