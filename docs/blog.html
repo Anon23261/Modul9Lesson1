@@ -3,188 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baking Tips & Techniques - Sweet Success</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Baking Blog - Tips & Techniques</title>
     <link rel="stylesheet" href="assets/css/bakery-theme.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .blog-header {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/blog-header.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 4rem 2rem;
-            text-align: center;
-            color: var(--bakery-flour);
-        }
-
-        .blog-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .blog-post {
-            background: var(--bakery-cream);
-            border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .blog-post img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
-        .blog-post h2 {
-            color: var(--bakery-brown);
-            margin-bottom: 1rem;
-        }
-
-        .blog-post .meta {
-            color: var(--neutral-800);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .blog-post .content {
-            line-height: 1.8;
-        }
-
-        .tip-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .tip-list li {
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-            position: relative;
-        }
-
-        .tip-list li::before {
-            content: '🍪';
-            position: absolute;
-            left: 0;
-            top: 2px;
-        }
-
-        .read-more {
-            display: inline-block;
-            margin-top: 1rem;
-            color: var(--bakery-brown);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .read-more:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@400;500;600&family=Roboto+Slab:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-content">
-            <a href="index.html" class="nav-brand">Sweet Success</a>
+            <a href="index.html" class="nav-brand">Sweet Delights</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="index.html#recipes">Recipes</a>
+                <a href="#recipes">Recipes</a>
                 <a href="blog.html" class="active">Blog</a>
-                <a href="demo.html">Demo</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
 
-    <header class="blog-header">
-        <h1>Baking Tips & Techniques</h1>
-        <p>Master the art of baking with our expert guides</p>
-    </header>
-
-    <main class="blog-container">
-        <article class="blog-post">
-            <img src="assets/images/measuring-ingredients.jpg" alt="Precisely measuring baking ingredients">
-            <div class="meta">December 16, 2024 • 5 min read</div>
-            <h2>The Science of Perfect Measurements</h2>
-            <div class="content">
-                <p>Precise measurements are the foundation of successful baking. Unlike cooking, where you can often eyeball ingredients, baking requires exact measurements to achieve consistent results.</p>
-                <h3>Essential Tips:</h3>
-                <ul class="tip-list">
-                    <li>Use a kitchen scale for precise flour measurements</li>
-                    <li>Spoon and level flour instead of scooping</li>
-                    <li>Bring ingredients to room temperature</li>
-                    <li>Use proper measuring tools for dry and wet ingredients</li>
-                </ul>
-                <a href="#" class="read-more">Read More →</a>
+    <main>
+        <header class="blog-header">
+            <div class="container">
+                <h1>Baking Tips & Techniques</h1>
+                <p>Master the art of baking with our expert guides and professional tips</p>
             </div>
-        </article>
+        </header>
 
-        <article class="blog-post">
-            <img src="assets/images/kneading-dough.jpg" alt="Properly kneading bread dough">
-            <div class="meta">December 16, 2024 • 7 min read</div>
-            <h2>Mastering Bread Kneading Techniques</h2>
-            <div class="content">
-                <p>The way you knead your bread dough can make the difference between a dense, heavy loaf and one that's light and airy. Learn the proper techniques to develop gluten and create the perfect texture.</p>
-                <h3>Key Points:</h3>
-                <ul class="tip-list">
-                    <li>Understand the windowpane test</li>
-                    <li>Learn different kneading methods</li>
-                    <li>Know when to stop kneading</li>
-                    <li>Temperature affects gluten development</li>
-                </ul>
-                <a href="#" class="read-more">Read More →</a>
-            </div>
-        </article>
+        <section class="blog-content">
+            <div class="container">
+                <div class="blog-grid">
+                    <article class="blog-post">
+                        <img src="assets/images/sourdough-tips.jpg" alt="Sourdough Bread Making Tips">
+                        <div class="post-content">
+                            <h2>The Art of Sourdough: A Beginner's Guide</h2>
+                            <div class="post-meta">
+                                <span>December 16, 2024</span>
+                                <span>Baking Basics</span>
+                            </div>
+                            <p>Learn the fundamentals of creating and maintaining your own sourdough starter, plus essential tips for achieving the perfect crust and crumb.</p>
+                            <a href="#" class="btn">Read More</a>
+                        </div>
+                    </article>
 
-        <article class="blog-post">
-            <img src="assets/images/proofing-bread.jpg" alt="Properly proofed bread dough">
-            <div class="meta">December 16, 2024 • 6 min read</div>
-            <h2>The Art of Proofing</h2>
-            <div class="content">
-                <p>Proofing is a crucial step in bread baking that allows your dough to develop flavor and achieve the right texture. Learn how to tell when your dough is properly proofed.</p>
-                <h3>Important Factors:</h3>
-                <ul class="tip-list">
-                    <li>Temperature control during proofing</li>
-                    <li>Visual cues for proper proofing</li>
-                    <li>The poke test method</li>
-                    <li>Over-proofing vs under-proofing</li>
-                </ul>
-                <a href="#" class="read-more">Read More →</a>
+                    <article class="blog-post">
+                        <img src="assets/images/cake-decorating.jpg" alt="Cake Decorating Techniques">
+                        <div class="post-content">
+                            <h2>Professional Cake Decorating Techniques</h2>
+                            <div class="post-meta">
+                                <span>December 15, 2024</span>
+                                <span>Advanced Skills</span>
+                            </div>
+                            <p>Master the art of cake decorating with these professional techniques, from perfect buttercream to stunning fondant work.</p>
+                            <a href="#" class="btn">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-post">
+                        <img src="assets/images/pastry-tips.jpg" alt="French Pastry Tips">
+                        <div class="post-content">
+                            <h2>Essential French Pastry Techniques</h2>
+                            <div class="post-meta">
+                                <span>December 14, 2024</span>
+                                <span>Pastry Skills</span>
+                            </div>
+                            <p>Discover the secrets of French pastry making, from laminated dough to perfect choux pastry and beyond.</p>
+                            <a href="#" class="btn">Read More</a>
+                        </div>
+                    </article>
+                </div>
+
+                <aside class="blog-sidebar">
+                    <div class="sidebar-section">
+                        <h3>Categories</h3>
+                        <ul class="category-list">
+                            <li><a href="#">Baking Basics (12)</a></li>
+                            <li><a href="#">Advanced Techniques (8)</a></li>
+                            <li><a href="#">Pastry Skills (10)</a></li>
+                            <li><a href="#">Bread Making (15)</a></li>
+                            <li><a href="#">Cake Decorating (9)</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>Popular Posts</h3>
+                        <ul class="popular-posts">
+                            <li>
+                                <a href="#">5 Secrets to Perfect Macarons</a>
+                                <span>December 10, 2024</span>
+                            </li>
+                            <li>
+                                <a href="#">Understanding Gluten Development</a>
+                                <span>December 8, 2024</span>
+                            </li>
+                            <li>
+                                <a href="#">The Science of Baking Powder</a>
+                                <span>December 5, 2024</span>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
             </div>
-        </article>
+        </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html#features">Features</a></li>
-                    <li><a href="index.html#recipes">Recipes</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>Sharing our passion for baking through expert tips, techniques, and delicious recipes.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Recipes</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for weekly baking tips and recipes!</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="docs/installation.html">Installation</a></li>
-                    <li><a href="docs/api.html">API Reference</a></li>
-                    <li><a href="docs/video-guidelines.html">Video Guidelines</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sweet Delights. All rights reserved.</p>
             </div>
-            <div class="footer-section">
-                <h3>Connect</h3>
-                <ul>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Pinterest</a></li>
-                    <li><a href="#">YouTube</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Sweet Success Bakery System. All rights reserved.</p>
         </div>
     </footer>
 </body>

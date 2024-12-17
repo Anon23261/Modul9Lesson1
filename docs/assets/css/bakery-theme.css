@@ -196,6 +196,148 @@ footer {
     color: var(--bakery-flour);
 }
 
+/* Blog Styles */
+.blog-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero-bakery.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--bakery-flour);
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.blog-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.blog-content {
+    padding: 2rem 0;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.blog-post {
+    background: var(--bakery-cream);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.post-content {
+    padding: 1.5rem;
+}
+
+.post-content h2 {
+    color: var(--bakery-chocolate);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    color: var(--neutral-800);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.blog-sidebar {
+    padding: 1.5rem;
+}
+
+.sidebar-section {
+    background: var(--bakery-cream);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.sidebar-section h3 {
+    color: var(--bakery-chocolate);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+}
+
+.category-list li {
+    margin-bottom: 0.5rem;
+}
+
+.category-list a {
+    color: var(--neutral-800);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    transition: color 0.3s ease;
+}
+
+.category-list a:hover {
+    color: var(--bakery-chocolate);
+}
+
+.popular-posts {
+    list-style: none;
+    padding: 0;
+}
+
+.popular-posts li {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--neutral-200);
+}
+
+.popular-posts li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.popular-posts a {
+    color: var(--bakery-chocolate);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+.popular-posts span {
+    color: var(--neutral-800);
+    font-size: 0.875rem;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--neutral-200);
+    border-radius: 8px;
+}
+
 @media (max-width: 768px) {
     .nav-content {
         flex-direction: column;
@@ -212,5 +354,19 @@ footer {
         flex-direction: column;
         gap: 0.5rem;
         text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-header h1 {
+        font-size: 2rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
     }
 }
