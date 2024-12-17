@@ -136,15 +136,19 @@ body {
     color: var(--bakery-gold);
 }
 
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
 .recipe-card {
     background: var(--bakery-cream);
-    padding: 1.5rem;
     border-radius: 16px;
-    text-align: center;
+    overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
 }
 
 .recipe-card:hover {
@@ -155,32 +159,33 @@ body {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
 }
 
 .recipe-card h3 {
-    color: var(--bakery-brown);
-    margin-bottom: 0.5rem;
+    color: var(--bakery-chocolate);
+    padding: 1rem;
+    margin: 0;
+    font-family: 'Pacifico', cursive;
 }
 
 .recipe-card p {
     color: var(--neutral-800);
+    padding: 0 1rem;
     margin-bottom: 1rem;
-    flex-grow: 1;
 }
 
 .recipe-meta {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-    color: var(--neutral-800);
+    padding: 1rem;
+    background: var(--bakery-wheat);
+    font-size: 0.875rem;
 }
 
-.section-footer {
+.recipe-card .btn {
+    display: block;
+    margin: 1rem;
     text-align: center;
-    margin-top: 3rem;
 }
 
 .feature-grid {
@@ -377,6 +382,25 @@ footer {
 
 #newsletter-message.error {
     color: #c62828;
+}
+
+.error {
+    border-color: #c62828 !important;
+}
+
+.error-message {
+    color: #c62828;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.success-message {
+    background: #2e7d32;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 1rem;
 }
 
 /* Responsive Improvements */

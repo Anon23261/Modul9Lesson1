@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bakery Registration Demo</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/bakery-theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-900: #2D3436;
@@ -189,14 +190,14 @@
         <form id="productForm">
             <div class="form-step active" data-step="1">
                 <div class="form-group">
-                    <label for="name">Product Name</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="bakeryName">Bakery Name</label>
+                    <input type="text" id="bakeryName" name="bakeryName" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="category">Category</label>
-                    <select id="category" name="category" required>
-                        <option value="">Select Category</option>
+                    <label for="bakeryType">Bakery Type</label>
+                    <select id="bakeryType" name="bakeryType" required>
+                        <option value="">Select Type</option>
                         <option value="bread">Bread</option>
                         <option value="pastry">Pastry</option>
                         <option value="cake">Cake</option>
@@ -207,107 +208,126 @@
 
                 <div class="button-group">
                     <div></div>
-                    <button type="button" class="primary next-step">Next</button>
+                    <button type="button" class="btn-next">Next</button>
                 </div>
             </div>
 
             <div class="form-step" data-step="2">
                 <div class="form-group">
-                    <label for="description">Description</label>
-                    <textarea id="description" name="description" rows="3"></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="price">Price (USD)</label>
-                    <input type="number" id="price" name="price" step="0.01" required>
+                    <label for="employees">Number of Employees</label>
+                    <input type="number" id="employees" name="employees" required>
                 </div>
 
                 <div class="button-group">
-                    <button type="button" class="secondary prev-step">Previous</button>
-                    <button type="button" class="primary next-step">Next</button>
+                    <button type="button" class="btn-prev">Previous</button>
+                    <button type="button" class="btn-next">Next</button>
                 </div>
             </div>
 
             <div class="form-step" data-step="3">
                 <div id="review-content">
                     <h3>Review Your Information</h3>
-                    <div id="review-details"></div>
+                    <p><strong>Bakery Name:</strong> <span id="reviewName"></span></p>
+                    <p><strong>Bakery Type:</strong> <span id="reviewType"></span></p>
+                    <p><strong>Number of Employees:</strong> <span id="reviewEmployees"></span></p>
                 </div>
 
                 <div class="button-group">
-                    <button type="button" class="secondary prev-step">Previous</button>
-                    <button type="submit" class="primary">Submit</button>
+                    <button type="button" class="btn-prev">Previous</button>
+                    <button type="submit" class="btn-submit">Submit</button>
                 </div>
             </div>
         </form>
 
         <div class="success-message">
-            Product registered successfully!
+            Bakery registered successfully!
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('productForm');
-            const steps = document.querySelectorAll('.form-step');
-            const progressSteps = document.querySelectorAll('.progress-step');
-            const nextButtons = document.querySelectorAll('.next-step');
-            const prevButtons = document.querySelectorAll('.prev-step');
-            const successMessage = document.querySelector('.success-message');
+        let currentStep = 1;
+        const formSteps = document.querySelectorAll('.form-step');
+        const progressSteps = document.querySelectorAll('.progress-step');
+        const nextButtons = document.querySelectorAll('.btn-next');
+        const prevButtons = document.querySelectorAll('.btn-prev');
+        const submitButton = document.querySelector('.btn-submit');
 
-            let currentStep = 1;
-
-            function showStep(step) {
-                steps.forEach(s => s.classList.remove('active'));
-                progressSteps.forEach(p => p.classList.remove('active'));
-                
-                document.querySelector(`[data-step="${step}"]`).classList.add('active');
-                for(let i = 0; i < step; i++) {
-                    progressSteps[i].classList.add('active');
+        function showStep(step) {
+            formSteps.forEach((el, index) => {
+                if (index + 1 === step) {
+                    el.style.display = 'block';
+                } else {
+                    el.style.display = 'none';
                 }
-            }
-
-            function updateReview() {
-                const reviewDetails = document.getElementById('review-details');
-                const formData = new FormData(form);
-                let html = '';
-                
-                for(let [key, value] of formData.entries()) {
-                    if(value) {
-                        html += `<p><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</p>`;
-                    }
-                }
-                
-                reviewDetails.innerHTML = html;
-            }
-
-            nextButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    if(currentStep < 3) {
-                        currentStep++;
-                        showStep(currentStep);
-                        if(currentStep === 3) {
-                            updateReview();
-                        }
-                    }
-                });
             });
 
-            prevButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    if(currentStep > 1) {
-                        currentStep--;
-                        showStep(currentStep);
-                    }
-                });
+            progressSteps.forEach((el, index) => {
+                if (index + 1 <= step) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                }
             });
+        }
 
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                form.style.display = 'none';
-                successMessage.style.display = 'block';
+        function updateReview() {
+            const name = document.getElementById('bakeryName').value;
+            const type = document.getElementById('bakeryType').value;
+            const employees = document.getElementById('employees').value;
+            
+            document.getElementById('reviewName').textContent = name;
+            document.getElementById('reviewType').textContent = type;
+            document.getElementById('reviewEmployees').textContent = employees;
+        }
+
+        nextButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                if(validateStep(currentStep)) {
+                    currentStep++;
+                    showStep(currentStep);
+                    if(currentStep === 3) {
+                        updateReview();
+                    }
+                }
             });
         });
+
+        prevButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                currentStep--;
+                showStep(currentStep);
+            });
+        });
+
+        submitButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            if(validateStep(currentStep)) {
+                alert('Registration successful! Thank you for registering your bakery.');
+                currentStep = 1;
+                showStep(currentStep);
+                document.querySelectorAll('form')[0].reset();
+            }
+        });
+
+        function validateStep(step) {
+            let isValid = true;
+            const currentForm = document.querySelector(`.form-step[data-step="${step}"]`);
+            const inputs = currentForm.querySelectorAll('input[required], select[required]');
+            
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.classList.add('error');
+                } else {
+                    input.classList.remove('error');
+                }
+            });
+
+            return isValid;
+        }
+
+        // Initialize first step
+        showStep(currentStep);
     </script>
 </body>
 </html>
