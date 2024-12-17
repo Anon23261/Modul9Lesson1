@@ -6,125 +6,307 @@
     <title>Bakery Registration Demo</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
+        :root {
+            --primary-900: #2D3436;
+            --primary-800: #355C7D;
+            --primary-700: #F67280;
+            --primary-600: #F8B195;
+            --secondary-500: #55efc4;
+            --secondary-400: #ff7675;
+            --secondary-300: #FFEAA7;
+            --secondary-200: #81ECEC;
+            --neutral-900: #2D3436;
+            --neutral-800: #636E72;
+            --neutral-700: #B2BEC3;
+            --neutral-600: #DFE6E9;
+            --neutral-500: #F5F6FA;
+            --neutral-100: #FFFFFF;
+        }
+
         body {
+            font-family: 'Inter', sans-serif;
+            background: var(--neutral-500);
             margin: 0;
             padding: 20px;
-            background: white;
         }
-        
-        .demo-form {
+
+        .form-container {
             max-width: 600px;
             margin: 0 auto;
+            background: var(--neutral-100);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        
+
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .progress-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .progress-step::after {
+            content: '';
+            height: 2px;
+            width: 100%;
+            background: var(--neutral-600);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .progress-step:last-child::after {
+            display: none;
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: var(--neutral-600);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .progress-step.active .step-number {
+            background: var(--primary-800);
+        }
+
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 24px;
         }
-        
+
         label {
             display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
             font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--primary-900);
         }
-        
+
         input[type="text"],
         input[type="number"],
         select,
         textarea {
             width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
+            padding: 12px;
+            border: 1px solid var(--neutral-700);
             border-radius: 8px;
-            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
         }
-        
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-800);
+            box-shadow: 0 0 0 3px rgba(53,92,125,0.1);
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 32px;
+        }
+
         button {
-            background: var(--primary-color);
-            color: white;
+            padding: 12px 24px;
             border: none;
-            padding: 0.75rem 1.5rem;
             border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
             cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
         }
-        
+
+        button.primary {
+            background: var(--primary-800);
+            color: white;
+        }
+
+        button.secondary {
+            background: var(--neutral-600);
+            color: var(--primary-900);
+        }
+
         button:hover {
-            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        
-        .preview {
-            margin-top: 2rem;
-            padding: 1rem;
-            border: 1px solid #ddd;
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        .success-message {
+            background: var(--secondary-500);
+            color: white;
+            padding: 16px;
             border-radius: 8px;
+            margin-top: 16px;
+            display: none;
         }
     </style>
 </head>
 <body>
-    <div class="demo-form">
-        <h2>Product Registration Demo</h2>
-        
+    <div class="form-container">
+        <div class="progress-bar">
+            <div class="progress-step active">
+                <div class="step-number">1</div>
+                <span>Basic Info</span>
+            </div>
+            <div class="progress-step">
+                <div class="step-number">2</div>
+                <span>Details</span>
+            </div>
+            <div class="progress-step">
+                <div class="step-number">3</div>
+                <span>Review</span>
+            </div>
+        </div>
+
         <form id="productForm">
-            <div class="form-group">
-                <label for="name">Product Name</label>
-                <input type="text" id="name" name="name" required>
+            <div class="form-step active" data-step="1">
+                <div class="form-group">
+                    <label for="name">Product Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select Category</option>
+                        <option value="bread">Bread</option>
+                        <option value="pastry">Pastry</option>
+                        <option value="cake">Cake</option>
+                        <option value="cookie">Cookie</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <div></div>
+                    <button type="button" class="primary next-step">Next</button>
+                </div>
             </div>
-            
-            <div class="form-group">
-                <label for="category">Category</label>
-                <select id="category" name="category" required>
-                    <option value="">Select Category</option>
-                    <option value="bread">Bread</option>
-                    <option value="pastry">Pastry</option>
-                    <option value="cake">Cake</option>
-                </select>
+
+            <div class="form-step" data-step="2">
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" rows="3"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="price">Price (USD)</label>
+                    <input type="number" id="price" name="price" step="0.01" required>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="secondary prev-step">Previous</button>
+                    <button type="button" class="primary next-step">Next</button>
+                </div>
             </div>
-            
-            <div class="form-group">
-                <label for="price">Price (USD)</label>
-                <input type="number" id="price" name="price" step="0.01" required>
+
+            <div class="form-step" data-step="3">
+                <div id="review-content">
+                    <h3>Review Your Information</h3>
+                    <div id="review-details"></div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="secondary prev-step">Previous</button>
+                    <button type="submit" class="primary">Submit</button>
+                </div>
             </div>
-            
-            <div class="form-group">
-                <label for="description">Description</label>
-                <textarea id="description" name="description" rows="3"></textarea>
-            </div>
-            
-            <button type="submit">Register Product</button>
         </form>
-        
-        <div class="preview" id="preview" style="display: none;">
-            <h3>Preview</h3>
-            <div id="previewContent"></div>
+
+        <div class="success-message">
+            Product registered successfully!
         </div>
     </div>
 
     <script>
-        document.getElementById('productForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const preview = document.getElementById('preview');
-            const previewContent = document.getElementById('previewContent');
-            
-            let html = '';
-            for (let [key, value] of formData.entries()) {
-                html += `<p><strong>${key}:</strong> ${value}</p>`;
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('productForm');
+            const steps = document.querySelectorAll('.form-step');
+            const progressSteps = document.querySelectorAll('.progress-step');
+            const nextButtons = document.querySelectorAll('.next-step');
+            const prevButtons = document.querySelectorAll('.prev-step');
+            const successMessage = document.querySelector('.success-message');
+
+            let currentStep = 1;
+
+            function showStep(step) {
+                steps.forEach(s => s.classList.remove('active'));
+                progressSteps.forEach(p => p.classList.remove('active'));
+                
+                document.querySelector(`[data-step="${step}"]`).classList.add('active');
+                for(let i = 0; i < step; i++) {
+                    progressSteps[i].classList.add('active');
+                }
             }
-            
-            previewContent.innerHTML = html;
-            preview.style.display = 'block';
-            
-            // Simulate success message
-            const message = document.createElement('div');
-            message.style.padding = '1rem';
-            message.style.marginTop = '1rem';
-            message.style.backgroundColor = '#55efc4';
-            message.style.borderRadius = '8px';
-            message.textContent = 'Product registered successfully!';
-            previewContent.appendChild(message);
+
+            function updateReview() {
+                const reviewDetails = document.getElementById('review-details');
+                const formData = new FormData(form);
+                let html = '';
+                
+                for(let [key, value] of formData.entries()) {
+                    if(value) {
+                        html += `<p><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</p>`;
+                    }
+                }
+                
+                reviewDetails.innerHTML = html;
+            }
+
+            nextButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    if(currentStep < 3) {
+                        currentStep++;
+                        showStep(currentStep);
+                        if(currentStep === 3) {
+                            updateReview();
+                        }
+                    }
+                });
+            });
+
+            prevButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    if(currentStep > 1) {
+                        currentStep--;
+                        showStep(currentStep);
+                    }
+                });
+            });
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+            });
         });
     </script>
 </body>
