@@ -33,7 +33,7 @@
             <div class="container">
                 <div class="blog-grid">
                     <article class="blog-post">
-                        <img src="assets/images/sourdough-tips.jpg" alt="Sourdough Bread Making Tips">
+                        <img src="assets/images/blog/sourdough-bread.jpg" alt="Sourdough Bread Making Tips">
                         <div class="post-content">
                             <h2>The Art of Sourdough: A Beginner's Guide</h2>
                             <div class="post-meta">
@@ -46,7 +46,7 @@
                     </article>
 
                     <article class="blog-post">
-                        <img src="assets/images/cake-decorating.jpg" alt="Cake Decorating Techniques">
+                        <img src="assets/images/blog/cake-decor.jpg" alt="Cake Decorating Techniques">
                         <div class="post-content">
                             <h2>Professional Cake Decorating Techniques</h2>
                             <div class="post-meta">
@@ -59,7 +59,7 @@
                     </article>
 
                     <article class="blog-post">
-                        <img src="assets/images/pastry-tips.jpg" alt="French Pastry Tips">
+                        <img src="assets/images/blog/french-pastry.jpg" alt="French Pastry Tips">
                         <div class="post-content">
                             <h2>Essential French Pastry Techniques</h2>
                             <div class="post-meta">
@@ -82,6 +82,17 @@
                             <li><a href="#">Bread Making (15)</a></li>
                             <li><a href="#">Cake Decorating (9)</a></li>
                         </ul>
+                    </div>
+
+                    <div class="sidebar-section newsletter-signup">
+                        <h3>Subscribe to Our Newsletter</h3>
+                        <form id="newsletter-form" onsubmit="return handleNewsletterSignup(event)">
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                        <div id="newsletter-message"></div>
                     </div>
 
                     <div class="sidebar-section">
