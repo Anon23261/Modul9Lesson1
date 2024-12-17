@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Registration Demo</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: white;
+        }
+        
+        .demo-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+        
+        button:hover {
+            background: var(--secondary-color);
+        }
+        
+        .preview {
+            margin-top: 2rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-form">
+        <h2>Product Registration Demo</h2>
+        
+        <form id="productForm">
+            <div class="form-group">
+                <label for="name">Product Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" name="category" required>
+                    <option value="">Select Category</option>
+                    <option value="bread">Bread</option>
+                    <option value="pastry">Pastry</option>
+                    <option value="cake">Cake</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="price">Price (USD)</label>
+                <input type="number" id="price" name="price" step="0.01" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="3"></textarea>
+            </div>
+            
+            <button type="submit">Register Product</button>
+        </form>
+        
+        <div class="preview" id="preview" style="display: none;">
+            <h3>Preview</h3>
+            <div id="previewContent"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('productForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const preview = document.getElementById('preview');
+            const previewContent = document.getElementById('previewContent');
+            
+            let html = '';
+            for (let [key, value] of formData.entries()) {
+                html += `<p><strong>${key}:</strong> ${value}</p>`;
+            }
+            
+            previewContent.innerHTML = html;
+            preview.style.display = 'block';
+            
+            // Simulate success message
+            const message = document.createElement('div');
+            message.style.padding = '1rem';
+            message.style.marginTop = '1rem';
+            message.style.backgroundColor = '#55efc4';
+            message.style.borderRadius = '8px';
+            message.textContent = 'Product registered successfully!';
+            previewContent.appendChild(message);
+        });
+    </script>
+</body>
+</html>

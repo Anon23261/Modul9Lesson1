@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Registration System - Documentation</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h1>🥖 Bakery Registration</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#demo">Live Demo</a></li>
+            <li><a href="#video">Video Guidelines</a></li>
+            <li><a href="#api">API Documentation</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <section id="overview" class="section">
+            <h2>Project Overview</h2>
+            <p>A comprehensive bakery product registration system with advanced features including:</p>
+            <ul>
+                <li>Product registration with image and video support</li>
+                <li>Multi-quality video processing</li>
+                <li>Custom video player</li>
+                <li>Responsive design</li>
+                <li>Advanced search capabilities</li>
+            </ul>
+        </section>
+
+        <section id="installation" class="section">
+            <h2>Installation Guide</h2>
+            <div class="code-block">
+                <pre><code class="language-bash">
+# Clone the repository
+git clone https://github.com/Anon23261/Modul9Lesson1.git
+
+# PHP Installation
+cd bakery-website/php
+composer install
+
+# C Installation
+cd ../c
+make
+                </code></pre>
+            </div>
+        </section>
+
+        <section id="features" class="section">
+            <h2>Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🎥 Video Support</h3>
+                    <p>Advanced video processing with multiple quality options</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📱 Responsive Design</h3>
+                    <p>Works seamlessly on all devices</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔒 Security</h3>
+                    <p>Built-in security features and validation</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 Analytics</h3>
+                    <p>Comprehensive tracking and reporting</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="demo" class="section">
+            <h2>Live Demo</h2>
+            <div class="demo-container">
+                <div class="demo-frame">
+                    <iframe src="demo.html" frameborder="0"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="video" class="section">
+            <h2>Video Guidelines</h2>
+            <div class="video-specs">
+                <h3>Supported Formats</h3>
+                <ul>
+                    <li>MP4 (H.264)</li>
+                    <li>WebM (VP9)</li>
+                    <li>MOV (H.264)</li>
+                </ul>
+                <h3>Quality Options</h3>
+                <ul>
+                    <li>480p (854x480)</li>
+                    <li>720p (1280x720)</li>
+                    <li>1080p (1920x1080)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="api" class="section">
+            <h2>API Documentation</h2>
+            <div class="api-docs">
+                <h3>Endpoints</h3>
+                <div class="endpoint">
+                    <h4>POST /api/products</h4>
+                    <p>Create a new product registration</p>
+                    <pre><code class="language-json">
+{
+    "name": "Product Name",
+    "category": "Category",
+    "description": "Description",
+    "price": 19.99
+}
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-json.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
